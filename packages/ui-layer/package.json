@@ -1,5 +1,5 @@
 {
-  "name": "@up.se/ui-layer",
+  "name": "@upse/ui-layer",
   "type": "module",
   "version": "0.0.1",
   "main": "./nuxt.config.ts",

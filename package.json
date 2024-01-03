@@ -1,5 +1,5 @@
 {
-  "name": "ui-layer",
+  "name": "nuxtlab",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "packageManager": "pnpm@8.6.2"
 }
