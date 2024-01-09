@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  myLayer: {
+  layer: {
     name: 'Hello from App One'
   }
 })
