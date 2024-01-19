@@ -1,35 +1,33 @@
 <template>
-    <h1 class="text-2xl">Exemplos</h1>
-    <div class="flex flex-wrap my-4 gap-4">
-        <preview-component title="Input Add">
-            <forms-input-add> </forms-input-add>
-        </preview-component>
-        <preview-component title="Input Corner">
-            <forms-input-corner></forms-input-corner>
-        </preview-component>
-        <preview-component title="Input Hidden Label">
-            <forms-input-hidden-label></forms-input-hidden-label>
-        </preview-component>
-        <preview-component title="Input Inline Add">
-            <forms-input-inline-add></forms-input-inline-add>
-        </preview-component>
-        <preview-component title="Input Inline Add Dropdown">
-            <forms-input-inline-add-dropdown></forms-input-inline-add-dropdown>
-        </preview-component>
-        <preview-component title="Input Inline Add Ons">
-            <forms-input-inline-add-ons></forms-input-inline-add-ons>
-        </preview-component>
-        <preview-component title="Input Inline Dropdown">
-            <forms-input-inline-dropdown></forms-input-inline-dropdown>
-        </preview-component>
-        <preview-component title="Input Label Help">
-            <forms-input-label-help></forms-input-label-help>
-        </preview-component>
-        <preview-component title="Input Label">
-            <forms-input-label></forms-input-label>
-        </preview-component>
-        <preview-component title="Input Shared Borders">
-            <forms-input-shared-borders></forms-input-shared-borders>
-        </preview-component>
+    <div class="flex justify-center items-center flex-col mx-auto">
+        <h1 class="font-bold text-2xl">Access Components</h1>
+        <nav>
+            <div class="p-6" v-for="nav in navs" :key="nav.parent">
+                <div class="flex gap-4 ">
+                    <NuxtLink class="text-lg hover:text-blue-600 " :to="`${nav.parent}/${nav.childrens[0]}`"> {{ nav.parent }} </NuxtLink>
+                    <ul class="text-sm">
+                        <li v-for="child in nav.childrens" :key="child" class="hover:text-blue-300"><NuxtLink :to="`${nav.parent}/${child}`"> {{ child }} </NuxtLink></li>
+                    </ul> 
+                </div>
+            </div>  
+        </nav>
     </div>
 </template>
+
+<script setup lang="ts">
+
+type Nav = {
+    parent: string,
+    childrens: string[]
+}
+
+const navs = ref<Nav[]>([
+    {
+        parent: "forms",
+        childrens: [
+            "inputs",
+        ]
+    }
+])
+
+</script>
